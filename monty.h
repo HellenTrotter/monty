@@ -3,6 +3,7 @@
 
 #define MAX_OPCODE_LENGTH 10
 #define MAX_ARG_LENGTH 20
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
