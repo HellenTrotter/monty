@@ -64,7 +64,7 @@ void free_stack(stack_t *top);
 stack_t *_add_node(stack_t **top, const int l);
 void execute_file(stack_t **top);
 void exec_opcode(char *opcode, stack_t **top, unsigned int line_number);
-
+void pint_op(stack_t **top, unsigned int line_number);
 
 
 #endif

@@ -51,6 +51,7 @@ void exec_opcode(char *opcode, stack_t **top, unsigned int line_number)
 	instruction_t instructions[] = {
 		{"push", push_op},
 		{"pall", pall_op},
+		{"pint", pint_op},
 		{NULL, NULL}
 	};
 
