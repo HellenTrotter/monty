@@ -7,15 +7,17 @@
  * Return: 0(success)
  */
 
-int pop_op(stack_t **top, unsigned int line_number)
+void pop_op(stack_t **top, unsigned int line_number)
 {
 	stack_t *tmp;
+	globals_t globals = {0};
 
 	if (*top == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		free(globals.current_line);
-		return (-1);
+		free_stack(*top);
+		exit(EXIT_FAILURE);
 	}
 
 	tmp = (*top)->next;
@@ -24,6 +26,4 @@ int pop_op(stack_t **top, unsigned int line_number)
 
 	if (*top != NULL)
 		(*top)->prev = NULL;
-
-	return (0);
-}	
+}

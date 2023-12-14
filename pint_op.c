@@ -8,6 +8,9 @@
 
 void pint_op(stack_t **top, unsigned int line_number)
 {
+	globals_t globals = {0};
+
+
 	if (*top == NULL)
 	{
 		fprintf(stderr, "L%d: cant't pint, stack empty\n", line_number);

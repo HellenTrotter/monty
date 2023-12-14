@@ -9,6 +9,7 @@
 void push_op(stack_t **top, unsigned int line_number)
 {
 	int i;
+	globals_t globals = {0};
 
 	if (globals.argument == NULL || _is_number(globals.argument))
 	{

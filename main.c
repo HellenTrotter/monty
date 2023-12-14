@@ -1,6 +1,5 @@
 #include "monty.h"
 
-globals_t globals;
 
 /**
  * main - entry point
@@ -12,6 +11,7 @@ globals_t globals;
 int main(int argc, char *argv[])
 {
 	stack_t *top = NULL;
+	globals_t globals = {0};
 
 	if (argc != 2)
 	{
@@ -43,16 +43,21 @@ int main(int argc, char *argv[])
  * exec_opcode - executes a single opcode
  * @opcode: opcode to execute
  * @top: pointer to the top of the stack
- * @line_number- line number of opcode
+ * @line_number: line number of opcode
  */
 
 void exec_opcode(char *opcode, stack_t **top, unsigned int line_number)
 {
+	globals_t globals = {0};
+
 	instruction_t instructions[] = {
 		{"push", push_op},
 		{"pall", pall_op},
 		{"pint", pint_op},
-		{"pop", pop_op}
+		{"pop", pop_op},
+		{"swap", swap_op},
+		{"add", add_op},
+		{"nop", nop_op},
 		{NULL, NULL}
 	};
 
