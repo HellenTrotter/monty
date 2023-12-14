@@ -52,6 +52,7 @@ void exec_opcode(char *opcode, stack_t **top, unsigned int line_number)
 		{"push", push_op},
 		{"pall", pall_op},
 		{"pint", pint_op},
+		{"pop", pop_op}
 		{NULL, NULL}
 	};
 
